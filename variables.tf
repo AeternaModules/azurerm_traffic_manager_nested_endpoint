@@ -28,13 +28,13 @@ EOT
     name                                  = string
     profile_id                            = string
     target_resource_id                    = string
-    enabled                               = optional(bool, true)
+    enabled                               = optional(bool) # Default: true
     endpoint_location                     = optional(string)
     geo_mappings                          = optional(list(string))
     minimum_required_child_endpoints_ipv4 = optional(number)
     minimum_required_child_endpoints_ipv6 = optional(number)
     priority                              = optional(number)
-    weight                                = optional(number, 1)
+    weight                                = optional(number) # Default: 1
     custom_header = optional(object({
       name  = string
       value = string
