@@ -1,3 +1,7 @@
+output "traffic_manager_nested_endpoints_id" {
+  description = "Map of id values across all traffic_manager_nested_endpoints, keyed the same as var.traffic_manager_nested_endpoints"
+  value       = { for k, v in azurerm_traffic_manager_nested_endpoint.traffic_manager_nested_endpoints : k => v.id }
+}
 output "traffic_manager_nested_endpoints_custom_header" {
   description = "Map of custom_header values across all traffic_manager_nested_endpoints, keyed the same as var.traffic_manager_nested_endpoints"
   value       = { for k, v in azurerm_traffic_manager_nested_endpoint.traffic_manager_nested_endpoints : k => v.custom_header }
